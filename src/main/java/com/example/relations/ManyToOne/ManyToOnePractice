@@ -1,0 +1,7 @@
+Best practice:  @ManyToOne annotation on the child side is everything you need
+
+
+Just because you have the option of using the @OneToMany annotation, it does not mean this should be the default option for
+every one-to-many database relationship.
+
+@OneToMany is practical only when many means few. Maybe @OneToFew would have been a more suggestive name for this annotation.

@@ -1,0 +1,15 @@
+try not use mappedBy , bidirectional is not a good idea, child use @MapsId to share the same primary id with the parent, and use no CascadeType ,  thats the best practice of OneOnOne.
+
+
+
+1. CascadeType should always used from parent to child, not from child to parent.
+
+2. even its bidirectional, one parent can has no child even with CascadeType.All, it just cant have more than two child. the child side( @MapsId) need to take care of the relation.
+
+3. parent side mappedBy will cause FetchType.LAZY fail. Thats why a simple query from parent will generate a complex query even tho there is a FetchType.LAZY.
+
+4.no matter its bidirectional or unidirectional, the relation owner need to take care of the relation manually.
+
+5.CascadeType.All is not a default setting, there are problems there.. If it must be used, specify the CascadeType according to the need.
+
+6. the only advantage of mappedBy is get child from parent, we can use another child query anyway.
