@@ -111,7 +111,7 @@ public class FilmController {
 
     }
 
-    @DeleteMapping( value = "/film/deleteAFilmWithDirectlyWillFail" )
+    @DeleteMapping( value = "/film/deleteAFilmDirectlyWillFail" )
     private void deleteAFilmDirectlyWillFail(Integer filmId) {
 
         Optional<Film> optionalFilm = filmRepository.findById(filmId);
@@ -245,6 +245,39 @@ public class FilmController {
     private void searchAFilm(Integer filmId) {
 
         filmRepository.findById(filmId);
+
+    }
+
+    @GetMapping( value = "/film/getAFilmFromFilmComment" )
+    private void getAFilmFromFilmComment(Integer filmId) {
+
+       Optional<FilmComment> optionalFilmComment = filmCommentRepository.findById(filmId);
+
+//        Hibernate:
+//        select
+//        filmcommen0_.comment_id as comment_1_3_0_,
+//                filmcommen0_.comment_text as comment_2_3_0_,
+//        filmcommen0_.film_id as film_id3_3_0_
+//                from
+//        film_comment filmcommen0_
+//        where
+//        filmcommen0_.comment_id=?
+//
+//        Hibernate:
+//        select
+//        film0_.film_id as film_id1_2_0_,
+//                film0_.film_name as film_nam2_2_0_
+//        from
+//        film film0_
+//        where
+//        film0_.film_id=?
+
+       if(optionalFilmComment.isPresent()){
+
+           Film film = optionalFilmComment.get().getFilm();
+           //there is no db query here.
+
+       }
 
     }
 
