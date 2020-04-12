@@ -15,6 +15,6 @@ import javax.persistence.MappedSuperclass;
  */
 
 @MappedSuperclass
-public abstract class BaseMusic<T extends BaseMusic> {
+public abstract class BaseMusic {
 
 }

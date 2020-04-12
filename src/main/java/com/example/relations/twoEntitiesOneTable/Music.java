@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Entity(name = "Music")
 @Table(name = "music")
 @Builder
-public class Music extends BaseMusic<Music> {
+public class Music extends BaseMusic{
 
     @Id
     @GeneratedValue
