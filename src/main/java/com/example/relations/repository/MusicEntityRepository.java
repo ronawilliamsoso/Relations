@@ -1,7 +1,6 @@
 package com.example.relations.repository;
 
-import com.example.relations.twoEntitiesOneTable.Music;
-import com.example.relations.twoEntitiesOneTable.MusicEntity;
+import com.example.relations.twoEntitiesOneTable.model.Music;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,5 +10,5 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface MusicEntityRepository extends JpaRepository<MusicEntity,Long> {
+public interface MusicEntityRepository extends JpaRepository<Music,Long> {
 }

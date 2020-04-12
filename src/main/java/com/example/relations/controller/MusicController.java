@@ -3,8 +3,7 @@ package com.example.relations.controller;
 
 import com.example.relations.repository.MusicEntityRepository;
 import com.example.relations.repository.MusicRepository;
-import com.example.relations.twoEntitiesOneTable.Music;
-import com.example.relations.twoEntitiesOneTable.MusicEntity;
+import com.example.relations.twoEntitiesOneTable.model.Music;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,9 +23,9 @@ public class MusicController {
     private void addMusic() {
 
 
-        Music music = Music.builder().author("Wang music1").build();
+        com.example.relations.twoEntitiesOneTable.Music music = com.example.relations.twoEntitiesOneTable.Music.builder().author("Wang music1").build();
 
-        MusicEntity musicEntir = MusicEntity.builder().author("MusicEntity Wang").build();
+        Music musicEntir = Music.builder().author("MusicEntity Wang").build();
 
 
         musicRepository.save(music);
