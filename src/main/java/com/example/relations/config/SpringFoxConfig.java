@@ -28,7 +28,7 @@ import java.util.List;
 public class SpringFoxConfig {
 
     private static ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("Anti Fraud API").description("Restful Anti Fraud API").build();
+        return new ApiInfoBuilder().title("Learn JAP API").description("Restful").build();
     }
 
     @Bean

@@ -1,2 +1,32 @@
 cat has the most useful foreign key
 most less queries.
+
+use an object in Exampl will always cause innerjoin
+
+catRepository.findOne(Example.of(Cat.builder().master(master).build()));
+//
+//        select
+//        cat0_.master_id as master_i1_2_,
+//                cat0_.cat_gender as cat_gend2_2_,
+//        cat0_.cat_name as cat_name3_2_
+//                from
+//        cat cat0_
+//        inner join
+//        master master1_
+//        on cat0_.master_id=master1_.master_id
+//        where
+//        master1_.master_id=1
+//        and master1_.address=?
+//        and master1_.master_name=?
+
+        catRepository.findOne(Example.of(Cat.builder().masterId(id).build()));
+
+//        Hibernate:
+//        select
+//        cat0_.master_id as master_i1_2_,
+//                cat0_.cat_gender as cat_gend2_2_,
+//        cat0_.cat_name as cat_name3_2_
+//                from
+//        cat cat0_
+//        where
+//        cat0_.master_id=1
