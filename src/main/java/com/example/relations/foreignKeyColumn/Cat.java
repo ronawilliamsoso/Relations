@@ -8,12 +8,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.MapsId;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -35,6 +30,7 @@ public class Cat implements Serializable {
     private String catName;
 
     private String catGender;
+
 
     @OneToOne( fetch = FetchType.LAZY )
     @MapsId

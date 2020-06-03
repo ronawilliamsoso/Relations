@@ -23,6 +23,20 @@ public class BookController {
     private final BookRepository bookRepository;
     private final BookDetailRepository bookDetailRepository;
 
+
+    @GetMapping( value = "/book/lastBookDetail" )
+    private void lastBookDetail() {
+
+
+        Long detailId = bookDetailRepository.lastBookDetailId();
+
+        System.out.println("====> "+ detailId);
+
+//        Hibernate: insert into book (book_name) values (?)
+//        Hibernate: insert into book_detail (book_author, book_id) values (?, ?)
+
+    }
+
     @GetMapping( value = "/book/bestWayToAddABookDetail" )
     private void bestWayToAddABookDetail() {
         final String bookName = "Java digging1";

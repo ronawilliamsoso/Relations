@@ -178,17 +178,7 @@ public class ForeignKeyKolumnController {
 //        dog dog0_
 //        where
 //        dog0_.master_id=?
-       Dog dog = sheep.getDog();
 
-//        Hibernate:
-//        select
-//        sheep0_.master_id as master_i1_10_,
-//                sheep0_.sheep_gender as sheep_ge2_10_,
-//        sheep0_.sheep_name as sheep_na3_10_
-//                from
-//        sheep sheep0_
-//        where
-//        sheep0_.master_id=1
 
         sheepRepository.findById(id);
 

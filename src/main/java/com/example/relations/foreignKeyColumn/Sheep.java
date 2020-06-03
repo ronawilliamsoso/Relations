@@ -40,10 +40,4 @@ public class Sheep implements Serializable {
     @MapsId
     @JoinColumn(name = "master_id")
     private Master master;
-
-
-    // this reference is no use at all in database aspective.
-    @OneToOne( fetch = FetchType.LAZY )
-    @JoinColumn(name = "master_id")
-    private Dog dog;
 }
